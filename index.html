@@ -9,8 +9,7 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;1,400&family=Great+Vibes&family=Montserrat:wght@400;500&display=swap" rel="stylesheet">
 <style>
-:root{--cream:#fbf6ec;--cream2:#f4ead7;--ivory:#fffdf8;--gold:#b8913f;--gold-d:#8c6a24;--ink:#4a3b2a;--muted:#8a7558;
---grad:linear-gradient(135deg,#8c6a24,#d9bd7c 45%,#b8913f 60%,#f1dfab 80%,#9b7629)}
+:root{--cream:#fbf6ec;--cream2:#f4ead7;--ivory:#fffdf8;--gold:#b8913f;--gold-d:#8c6a24;--ink:#4a3b2a;--muted:#8a7558;--grad:linear-gradient(135deg,#8c6a24,#d9bd7c 45%,#b8913f 60%,#f1dfab 80%,#9b7629)}
 *{margin:0;padding:0;box-sizing:border-box}
 html{scroll-behavior:smooth;height:100%;scroll-padding-top:60px}
 body{font-family:"Cormorant Garamond",Georgia,serif;background:var(--cream);color:var(--ink);line-height:1.6;font-size:18px;overflow-x:hidden}
@@ -89,13 +88,22 @@ section{padding:70px 18px}
 #gate.open .hall{transform:scale(1)}
 .tw{animation:tw 2.4s ease-in-out infinite alternate}
 @keyframes tw{from{opacity:.65}to{opacity:1}}
-.door{position:absolute;top:0;bottom:0;width:50.3%;background:linear-gradient(90deg,#3a2210,#5e3a17 50%,#3a2210);box-shadow:inset 0 0 0 6px #b8913f,inset 0 0 0 9px #2a1809,inset 0 0 50px #000b;transition:transform 3.6s cubic-bezier(.45,.05,.25,1),filter 3.6s;backface-visibility:hidden;will-change:transform}
-.door::before{content:'';position:absolute;inset:7% 10% 38%;border:2px solid #d9bd7c;border-radius:300px 300px 6px 6px;background:linear-gradient(135deg,rgba(217,189,124,.2),transparent 60%)}
-.door::after{content:'';position:absolute;inset:66% 10% 6%;border:2px solid #d9bd7c;border-radius:6px;background:linear-gradient(135deg,rgba(217,189,124,.14),transparent 60%)}
+.door{position:absolute;top:0;bottom:0;width:50.3%;background:
+linear-gradient(90deg,rgba(54,35,20,.84),rgba(106,70,37,.88) 18%,rgba(60,38,24,.9) 35%,rgba(90,62,35,.86) 52%,rgba(48,30,18,.92) 72%,rgba(110,79,47,.9) 100%),
+repeating-linear-gradient(90deg,#4b2b13 0 6%, #613d1f 6% 12%, #2f1d0d 12% 18%, #6d4725 18% 24%, #341f10 24% 30%, #7d522d 30% 36%, #2d180d 36% 42%, #4d2f16 42% 48%, #6c3f1d 48% 54%, #2a170d 54% 60%, #84552d 60% 66%, #2f1b10 66% 72%, #744c2a 72% 78%, #2d1a0f 78% 84%, #593718 84% 90%, #2b180d 90% 100%);
+box-shadow:inset 0 0 0 8px rgba(196,155,92,.9),inset 0 0 0 16px rgba(34,24,15,.8),inset 0 0 0 22px rgba(11,8,5,.88),inset 0 0 25px rgba(0,0,0,.7),0 30px 40px rgba(0,0,0,.4),0 2px 0 rgba(255,255,255,.14);
+border-left:6px solid rgba(38,26,17,.9);border-right:6px solid rgba(24,17,12,.9);transition:transform 3.6s cubic-bezier(.45,.05,.25,1),filter 3.6s;backface-visibility:hidden;will-change:transform;overflow:hidden}
+.door::before{content:"";position:absolute;inset:6% 7% 6% 7%;border-radius:15px 15px 8px 8px;background:
+linear-gradient(90deg,rgba(255,255,255,.08),rgba(255,255,255,0) 18%,rgba(0,0,0,.14) 82%,rgba(0,0,0,.2)),
+repeating-linear-gradient(90deg,rgba(17,11,7,.22) 0 2px,rgba(17,11,7,.08) 2px 8px,rgba(255,255,255,.06) 8px 9px,rgba(17,11,7,.12) 9px 11px,rgba(255,255,255,.04) 11px 12px),
+linear-gradient(180deg,rgba(255,255,255,.12),rgba(0,0,0,.16));box-shadow:inset 0 0 0 3px rgba(205,168,99,.54),inset 0 0 0 7px rgba(36,25,16,.7);}
+.door::after{content:"";position:absolute;inset:12% 10% 14% 10%;border-radius:8px;background:
+linear-gradient(90deg,transparent 0 5%,rgba(21,15,11,.24) 5% 6%,transparent 6% 94%,rgba(21,15,11,.24) 94% 95%,transparent 95% 100%),
+linear-gradient(180deg,transparent 0 16%,rgba(22,15,10,.18) 16% 18%,transparent 18% 82%,rgba(22,15,10,.18) 82% 84%,transparent 84% 100%);border:1px solid rgba(229,196,125,.18)}
 .door.l{left:0;transform-origin:left center}.door.r{right:0;transform-origin:right center}
-#gate.open .l{transform:rotateY(80deg);filter:brightness(.6)}#gate.open .r{transform:rotateY(-80deg);filter:brightness(.6)}
-.door i{position:absolute;top:50%;width:18px;height:18px;margin-top:-9px;border-radius:50%;background:radial-gradient(#f1dfab,#8c6a24);box-shadow:0 0 14px #d9bd7c;z-index:2}
-.l i{right:6%}.r i{left:6%}
+#gate.open .l{transform:rotateY(80deg) translateX(-6px);filter:brightness(.7)}#gate.open .r{transform:rotateY(-80deg) translateX(6px);filter:brightness(.7)}
+.door i{position:absolute;top:50%;width:18px;height:18px;margin-top:-9px;border-radius:50%;background:radial-gradient(circle at 35% 30%,#f5e4b2,#d8b870 30%,#8b672e 60%,#4d3218 100%);box-shadow:0 0 0 2px rgba(207,166,97,.9),0 0 18px rgba(233,202,131,.85);z-index:2}
+.l i{right:11%}.r i{left:11%}
 .gate-txt{position:absolute;left:0;right:0;top:50%;transform:translateY(-50%);text-align:center;z-index:3;padding:0 20px;color:#fff8e6;text-shadow:0 2px 14px #000;transition:opacity .9s,transform 1.2s}
 #gate.open .gate-txt{opacity:0;transform:translateY(-50%) scale(1.08);pointer-events:none}
 .gate-txt .eyebrow{color:#f1dfab}
@@ -242,7 +250,6 @@ section{padding:70px 18px}
 <div class="cur-ring"></div><div class="cur-dot"></div>
 
 <script>
-/* ===== CUSTOMISE: edit your details here ===== */
 const WEDDING={coupleNames:'Hamna & Shehriyar',dateText:'November 21, 2026',dateTime:'2026-11-21T18:00:00',venue:'Kohitoor Marquee, Opposite Paradise Marquee, Main Daewoo Road, Faisalabad',entrance:{welcome:'You Are Cordially Invited',prompt:'Tap to Open the Doors'},invitation:{message:'With immense joy and the blessings of our families, you are warmly invited to celebrate this special occasion with us.',signature:'You Are Invited by the Family'},families:{bride:{title:`The Bride's Family`,names:[]},groom:{title:`The Groom's Family`,names:[]}},music:{src:''}};
 const wedding=new Date(WEDDING.dateTime).getTime();
 const get=p=>p.split('.').reduce((o,k)=>o&&o[k],WEDDING);
@@ -259,10 +266,8 @@ $("seconds").textContent=Math.floor(d/1e3%60);
 tick();setInterval(tick,1000);
 const io=new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting){e.target.classList.add("on");io.unobserve(e.target)}}),{threshold:.15});
 document.querySelectorAll(".reveal").forEach(el=>io.observe(el));
-/* ---- Families ---- */
 {const fams=Object.values(WEDDING.families).filter(f=>f.names&&f.names.length);
 if(fams.length){fams.forEach(f=>{const c=document.createElement('div'),h=document.createElement('h3'),u=document.createElement('ul');c.className='fam-card reveal';h.textContent=f.title;f.names.forEach(n=>{const li=document.createElement('li');li.textContent=n;u.appendChild(li)});c.append(h,u);$('famList').appendChild(c);io.observe(c)});$('family').hidden=false}}
-/* ---- Hall entrance + music ---- */
 const gate=$('gate'),mute=$('mute'),seq=[392,494,587,659,587,494,440,523,659,784,659,523];
 let ac,timer,aud,step=0,sound=false,opened=false;
 function note(f,v){const t=ac.currentTime,o=ac.createOscillator(),g=ac.createGain();o.frequency.value=f;g.gain.setValueAtTime(0,t);g.gain.linearRampToValueAtTime(v,t+.06);g.gain.exponentialRampToValueAtTime(.001,t+2.4);o.connect(g).connect(ac.destination);o.start(t);o.stop(t+2.5)}
@@ -275,7 +280,6 @@ function enter(skip){if(opened)return;opened=true;if(skip){gate.classList.add('o
 gate.addEventListener('click',e=>{if(!e.target.closest('#skipBtn'))enter(false)});
 $('skipBtn').addEventListener('click',e=>{e.stopPropagation();enter(true)});
 $('openBtn').focus({preventScroll:true});
-/* ---- Scratch-to-reveal ---- */
 {const face=$('face'),cv=$('scr'),ctx=cv.getContext('2d'),pr=document.createElement('canvas');pr.width=40;pr.height=24;const pc=pr.getContext('2d');
 let done=false,started=false,drawing=false,lx=0,ly=0,last=0;
 function paint(){const r=face.getBoundingClientRect(),d=Math.min(devicePixelRatio||1,2);if(!r.width)return;cv.width=r.width*d;cv.height=r.height*d;ctx.setTransform(d,0,0,d,0,0);ctx.globalCompositeOperation='source-over';
