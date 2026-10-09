@@ -9,7 +9,8 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;1,400&family=Great+Vibes&family=Montserrat:wght@400;500&display=swap" rel="stylesheet">
 <style>
-:root{--cream:#fbf6ec;--cream2:#f4ead7;--ivory:#fffdf8;--gold:#b8913f;--gold-d:#8c6a24;--ink:#4a3b2a;--muted:#8a7558;--grad:linear-gradient(135deg,#8c6a24,#d9bd7c 45%,#b8913f 60%,#f1dfab 80%,#9b7629)}
+:root{--cream:#fbf6ec;--cream2:#f4ead7;--ivory:#fffdf8;--gold:#b8913f;--gold-d:#8c6a24;--ink:#4a3b2a;--muted:#8a7558;
+--grad:linear-gradient(135deg,#8c6a24,#d9bd7c 45%,#b8913f 60%,#f1dfab 80%,#9b7629)}
 *{margin:0;padding:0;box-sizing:border-box}
 html{scroll-behavior:smooth;height:100%;scroll-padding-top:60px}
 body{font-family:"Cormorant Garamond",Georgia,serif;background:var(--cream);color:var(--ink);line-height:1.6;font-size:18px;overflow-x:hidden}
@@ -88,28 +89,20 @@ section{padding:70px 18px}
 #gate.open .hall{transform:scale(1)}
 .tw{animation:tw 2.4s ease-in-out infinite alternate}
 @keyframes tw{from{opacity:.65}to{opacity:1}}
-.door{position:absolute;top:0;bottom:0;width:50.3%;background:
-linear-gradient(90deg,rgba(54,35,20,.84),rgba(106,70,37,.88) 18%,rgba(60,38,24,.9) 35%,rgba(90,62,35,.86) 52%,rgba(48,30,18,.92) 72%,rgba(110,79,47,.9) 100%),
-repeating-linear-gradient(90deg,#4b2b13 0 6%, #613d1f 6% 12%, #2f1d0d 12% 18%, #6d4725 18% 24%, #341f10 24% 30%, #7d522d 30% 36%, #2d180d 36% 42%, #4d2f16 42% 48%, #6c3f1d 48% 54%, #2a170d 54% 60%, #84552d 60% 66%, #2f1b10 66% 72%, #744c2a 72% 78%, #2d1a0f 78% 84%, #593718 84% 90%, #2b180d 90% 100%);
-box-shadow:inset 0 0 0 8px rgba(196,155,92,.9),inset 0 0 0 16px rgba(34,24,15,.8),inset 0 0 0 22px rgba(11,8,5,.88),inset 0 0 25px rgba(0,0,0,.7),0 30px 40px rgba(0,0,0,.4),0 2px 0 rgba(255,255,255,.14);
-border-left:6px solid rgba(38,26,17,.9);border-right:6px solid rgba(24,17,12,.9);transition:transform 3.6s cubic-bezier(.45,.05,.25,1),filter 3.6s;backface-visibility:hidden;will-change:transform;overflow:hidden}
-.door::before{content:"";position:absolute;inset:6% 7% 6% 7%;border-radius:15px 15px 8px 8px;background:
-linear-gradient(90deg,rgba(255,255,255,.08),rgba(255,255,255,0) 18%,rgba(0,0,0,.14) 82%,rgba(0,0,0,.2)),
-repeating-linear-gradient(90deg,rgba(17,11,7,.22) 0 2px,rgba(17,11,7,.08) 2px 8px,rgba(255,255,255,.06) 8px 9px,rgba(17,11,7,.12) 9px 11px,rgba(255,255,255,.04) 11px 12px),
-linear-gradient(180deg,rgba(255,255,255,.12),rgba(0,0,0,.16));box-shadow:inset 0 0 0 3px rgba(205,168,99,.54),inset 0 0 0 7px rgba(36,25,16,.7);}
-.door::after{content:"";position:absolute;inset:12% 10% 14% 10%;border-radius:8px;background:
-linear-gradient(90deg,transparent 0 5%,rgba(21,15,11,.24) 5% 6%,transparent 6% 94%,rgba(21,15,11,.24) 94% 95%,transparent 95% 100%),
-linear-gradient(180deg,transparent 0 16%,rgba(22,15,10,.18) 16% 18%,transparent 18% 82%,rgba(22,15,10,.18) 82% 84%,transparent 84% 100%);border:1px solid rgba(229,196,125,.18)}
+.door{position:absolute;top:0;bottom:0;width:50.3%;background:linear-gradient(90deg,#3a2210,#5e3a17 50%,#3a2210);box-shadow:inset 0 0 0 6px #b8913f,inset 0 0 0 9px #2a1809,inset 0 0 50px #000b;transition:transform 3.6s cubic-bezier(.45,.05,.25,1),filter 3.6s;backface-visibility:hidden;will-change:transform}
+.door::before{content:'';position:absolute;inset:7% 10% 38%;border:2px solid #d9bd7c;border-radius:300px 300px 6px 6px;background:linear-gradient(135deg,rgba(217,189,124,.2),transparent 60%)}
+.door::after{content:'';position:absolute;inset:66% 10% 6%;border:2px solid #d9bd7c;border-radius:6px;background:linear-gradient(135deg,rgba(217,189,124,.14),transparent 60%)}
 .door.l{left:0;transform-origin:left center}.door.r{right:0;transform-origin:right center}
-#gate.open .l{transform:rotateY(80deg) translateX(-6px);filter:brightness(.7)}#gate.open .r{transform:rotateY(-80deg) translateX(6px);filter:brightness(.7)}
-.door i{position:absolute;top:50%;width:18px;height:18px;margin-top:-9px;border-radius:50%;background:radial-gradient(circle at 35% 30%,#f5e4b2,#d8b870 30%,#8b672e 60%,#4d3218 100%);box-shadow:0 0 0 2px rgba(207,166,97,.9),0 0 18px rgba(233,202,131,.85);z-index:2}
-.l i{right:11%}.r i{left:11%}
+#gate.open .l{transform:rotateY(80deg);filter:brightness(.6)}#gate.open .r{transform:rotateY(-80deg);filter:brightness(.6)}
+.door i{position:absolute;top:50%;width:18px;height:18px;margin-top:-9px;border-radius:50%;background:radial-gradient(#f1dfab,#8c6a24);box-shadow:0 0 14px #d9bd7c;z-index:2}
+.l i{right:6%}.r i{left:6%}
 .gate-txt{position:absolute;left:0;right:0;top:50%;transform:translateY(-50%);text-align:center;z-index:3;padding:0 20px;color:#fff8e6;text-shadow:0 2px 14px #000;transition:opacity .9s,transform 1.2s}
 #gate.open .gate-txt{opacity:0;transform:translateY(-50%) scale(1.08);pointer-events:none}
 .gate-txt .eyebrow{color:#f1dfab}
 .gate-txt h2{font-family:'Great Vibes',cursive;font-weight:400;font-size:clamp(46px,10vw,90px);line-height:1.15;color:#f1dfab;margin:6px 0 18px}
 .gate-skip{position:absolute;top:calc(14px + env(safe-area-inset-top,0px));right:16px;z-index:4;background:rgba(0,0,0,.35);color:#f1dfab;border:1px solid rgba(241,223,171,.6);border-radius:30px;padding:8px 18px;font:12px Montserrat,sans-serif;letter-spacing:2px;text-transform:uppercase;cursor:pointer}
-#mute{position:fixed;right:calc(14px + env(safe-area-inset-right,0px));bottom:calc(14px + env(safe-area-inset-bottom,0px));z-index:10001;width:46px;height:46px;border-radius:50%;border:1px solid rgba(184,145,63,.7);background:rgba(255,253,248,.92);font-size:20px;cursor:pointer;box-shadow:0 6px 18px rgba(0,0,0,.2)}
+#mute{position:fixed;right:calc(14px + env(safe-area-inset-right,0px));bottom:calc(14px + env(safe-area-inset-bottom,0px));z-index:10001;width:46px;height:46px;border-radius:50%;border:1px solid rgba(184,145,63,.7);background:rgba(255,253,248,.92);font-size:20px;cursor:pointer;box-shadow:0 6px 18px rgba(0,0,0,.2);transition:all .3s}
+#mute:hover{transform:scale(1.1)}
 .scratch-sec{background:var(--cream2)}
 .board{max-width:640px;margin:0 auto;padding:12px;border-radius:18px;background:linear-gradient(135deg,#8c6a24,#f1dfab 30%,#b8913f 55%,#f1dfab 80%,#8c6a24);box-shadow:0 20px 50px rgba(140,106,36,.3)}
 .face{position:relative;min-height:300px;border-radius:10px;background:radial-gradient(circle at 50% 40%,#fffdf8,#f4ead7);display:flex;align-items:center;justify-content:center;padding:48px 28px;overflow:hidden;box-shadow:inset 0 0 0 2px rgba(184,145,63,.5)}
@@ -132,13 +125,18 @@ linear-gradient(180deg,transparent 0 16%,rgba(22,15,10,.18) 16% 18%,transparent 
 </style>
 </head>
 <body class='locked'>
+<audio id='bgMusic' loop preload='auto'>
+  <source src='music/wedding-music.mp3' type='audio/mpeg'>
+  Your browser does not support the audio element.
+</audio>
+
 <div id='gate' role='dialog' aria-modal='true' aria-label='Wedding invitation entrance'>
 <div class='hall' aria-hidden='true'><svg viewBox='0 0 100 60' preserveAspectRatio='xMidYMid slice'><defs><radialGradient id='hg' cx='.5' cy='.4' r='.65'><stop offset='0' stop-color='#fff3cf'/><stop offset='.6' stop-color='#e6c372'/><stop offset='1' stop-color='#7a4f1a'/></radialGradient><radialGradient id='lt'><stop offset='0' stop-color='#fff8dc'/><stop offset='1' stop-color='#ffd76a' stop-opacity='0'/></radialGradient><g id='cd'><line y1='-14' y2='3' stroke='#b8913f' stroke-width='.3'/><circle r='8' fill='url(#lt)' class='tw'/><path d='M-5 3h10l-2 2h-6zM-3 5h6l-1 3h-4z' fill='#d9bd7c'/><circle cx='-4' cy='2' r='.7' fill='#fff8dc'/><circle cx='4' cy='2' r='.7' fill='#fff8dc'/><circle cy='1' r='.8' fill='#fff8dc'/></g></defs><rect width='100' height='60' fill='url(#hg)'/><rect width='9' height='60' fill='#6b4416' opacity='.55'/><rect x='91' width='9' height='60' fill='#6b4416' opacity='.55'/><path d='M30 46V24a20 20 0 0 1 40 0v22z' fill='#fffdf8' opacity='.88' stroke='#b8913f' stroke-width='.6'/><path d='M33 46V25a17 17 0 0 1 34 0v21z' fill='none' stroke='#d9bd7c' stroke-width='.3'/><g><circle cx='30' cy='24' r='2' fill='#f0a8a0'/><circle cx='32' cy='17' r='2' fill='#fff'/><circle cx='37' cy='11' r='2' fill='#f0a8a0'/><circle cx='44' cy='7' r='2' fill='#fff'/><circle cx='50' cy='4' r='2.4' fill='#f0a8a0'/><circle cx='56' cy='7' r='2' fill='#fff'/><circle cx='63' cy='11' r='2' fill='#f0a8a0'/><circle cx='68' cy='17' r='2' fill='#fff'/><circle cx='70' cy='24' r='2' fill='#f0a8a0'/><circle cx='30' cy='45' r='3' fill='#e7a99b'/><circle cx='70' cy='45' r='3' fill='#e7a99b'/><circle cx='28' cy='47' r='2' fill='#fff'/><circle cx='72' cy='47' r='2' fill='#fff'/></g><rect x='40' y='36' width='20' height='5' rx='2' fill='#d98e86'/><rect x='42' y='38' width='16' height='8' rx='2' fill='#b5544a'/><rect x='24' y='46' width='52' height='3' fill='#b8913f'/><rect x='20' y='49' width='60' height='3' fill='#8c6a24'/><path d='M0 52h100v8H0z' fill='#5a3716'/><path d='M42 52h16l10 8H32z' fill='#9e2f3a'/><use href='#cd' x='20' y='14'/><use href='#cd' x='80' y='14'/><use href='#cd' x='50' y='14' transform='translate(-12.5 -3.5) scale(1.25)' style='transform-origin:50px 14px'/></svg></div>
 <div class='door l' aria-hidden='true'><i></i></div><div class='door r' aria-hidden='true'><i></i></div>
-<div class='gate-txt'><p class='eyebrow' data-f='entrance.welcome'>You Are Cordially Invited</p><h2 data-f='coupleNames'>Hamna &amp; Shehriyar</h2><button class='btn' id='openBtn' data-f='entrance.prompt'>Tap to Open the Doors</button></div>
+<div class='gate-txt'><p class='eyebrow'>You Are Cordially Invited</p><h2>Hamna &amp; Shehriyar</h2><button class='btn' id='openBtn'>Tap to Open the Doors</button></div>
 <button class='gate-skip' id='skipBtn'>Skip ›</button>
 </div>
-<button id='mute' aria-label='Play music'>🔇</button>
+<button id='mute' aria-label='Toggle music'>🔇</button>
 <nav>
 <a href="#home">Home</a><a href="#story">Our Story</a><a href="#countdown">Countdown</a><a href="#events">Events</a><a href="#gallery">Gallery</a>
 </nav>
@@ -167,149 +165,161 @@ linear-gradient(180deg,transparent 0 16%,rgba(22,15,10,.18) 16% 18%,transparent 
 <path d="M95 88C92 62 112 56 124 58c16 2 25 14 21 30-5-12-17-18-27-16-10 2-18 8-23 16z" fill="#3b2a20"/>
 <path d="M109 90q4-5 8 0M124 90q4-5 8 0" stroke="#3b2a20" stroke-width="2" fill="none" stroke-linecap="round"/>
 <path d="M111 99q9 9 18 0" stroke="#3b2a20" stroke-width="2" fill="#fff" stroke-linecap="round"/>
+<path d="M99 88c-4 1-5 5-4 10" stroke="#3b2a20" stroke-width="1.5" fill="none"/>
+<path d="M141 88c4 1 5 5 4 10" stroke="#3b2a20" stroke-width="1.5" fill="none"/>
 <!-- bride -->
-<path d="M184 86C178 60 230 56 230 90c10 60 22 140 42 214l-18 2C238 240 226 170 222 122z" fill="#e3c98a" opacity=".55"/>
-<path d="M190 168h28q32 72 46 154-60 12-118 0 14-82 44-154z" fill="#f2cbbf"/>
-<path d="M146 322q58 12 118 0l-3-16q-57 12-112 0z" fill="url(#g)"/>
-<path d="M186 124q18-8 36 0l-4 48h-28z" fill="#e7a99b"/>
-<path d="M220 132q14 44 6 78" stroke="#e7a99b" stroke-width="12" stroke-linecap="round" fill="none"/>
-<path d="M188 132q-12 38-14 64" stroke="#e7a99b" stroke-width="12" stroke-linecap="round" fill="none"/>
-<rect x="198" y="110" width="12" height="14" fill="#efc09d"/>
-<g transform="rotate(-8 204 100)"><circle cx="226" cy="74" r="10" fill="#2f2119"/><circle cx="204" cy="94" r="22" fill="#f2c4a0"/>
-<path d="M182 98C176 66 230 62 228 98c-4-18-16-22-24-22-10 0-18 6-22 22z" fill="#2f2119"/>
-<path d="M193 96q4-5 8 0M207 96q4-5 8 0" stroke="#2f2119" stroke-width="2" fill="none" stroke-linecap="round"/>
-<path d="M197 105q7 7 14 0" stroke="#b5544a" stroke-width="2" fill="#fff" stroke-linecap="round"/>
-<path d="M180 92C178 64 230 60 230 92" stroke="url(#g)" stroke-width="3" fill="none"/></g>
-<circle cx="168" cy="200" r="7" fill="#e3ad88"/><circle cx="175" cy="201" r="6" fill="#efc09d"/>
-<circle cx="164" cy="206" r="7" fill="#fffdf8" stroke="#e3c98a"/><circle cx="180" cy="206" r="7" fill="#f0c3b6"/><circle cx="172" cy="212" r="8" fill="#e7a99b"/><circle cx="172" cy="212" r="3" fill="#d9bd7c"/>
+<path d="M218 120Q228 96 250 90c18-5 28 4 27 20-4-13-14-20-25-18-12 2-20 10-22 18z" fill="#f5b89f"/>
+<circle cx="240" cy="100" r="24" fill="#f5b89f"/>
+<path d="M226 102q4-5 8 0M241 102q4-5 8 0" stroke="#3b2a20" stroke-width="2" fill="none" stroke-linecap="round"/>
+<path d="M229 111q9 9 18 0" stroke="#3b2a20" stroke-width="2" fill="#fff" stroke-linecap="round"/>
+<path d="M217 100c-4 1-5 5-4 10" stroke="#3b2a20" stroke-width="1.5" fill="none"/>
+<path d="M259 100c4 1 5 5 4 10" stroke="#3b2a20" stroke-width="1.5" fill="none"/>
+<rect x="231" y="122" width="18" height="16" rx="2" fill="#f5b89f"/>
+<path d="M164 140Q200 135 235 140L240 302H158Z" fill="#fff8f3" stroke="#d9bd7c" stroke-width="1.5"/>
+<path d="M158 302h82l-2-18H160z" fill="url(#g)"/>
+<path d="M235 140l-45 125 8 8 50-140z" fill="url(#g)" opacity=".8"/>
+<path d="M164 145Q170 112 200 108" stroke="#f5b89f" stroke-width="14" stroke-linecap="round" fill="none"/>
+<path d="M235 145Q228 112 196 108" stroke="#f5b89f" stroke-width="14" stroke-linecap="round" fill="none"/>
 </svg>
-<p class="eyebrow">Kindly Join Us To Celebrate The Wedding Of</p>
-<h1 data-f='coupleNames'>Hamna &amp; Shehriyar</h1>
-<div class="divider">❦</div>
-<p class='date' data-f='dateText'>November 21, 2026</p>
-<a href="#events" class="btn">Join The Celebration</a>
+<p class="eyebrow">December 22, 2024</p>
+<h1>Hamna & Shehriyar</h1>
+<div class="divider"></div>
+<p class="date">Our Wedding Day</p>
+<a href="#events" class="btn">View Details</a>
 </div>
 </section>
 
 <section class="story" id="story">
-<div class="container reveal">
+<div class="container">
 <h2 class="title">Our Story</h2>
-<p class="sub">Two hearts, one beautiful journey.</p>
-<p class="t">We met, we laughed, we became best friends, and somewhere along the way we fell in love. Now we're excited to begin the next chapter of our lives together and celebrate this special moment with the people we love most.</p>
+<p class="sub">A love that grew with every moment</p>
+<p class="t reveal">Two souls destined to find each other, bound by love, faith, and countless shared moments. Our journey has been filled with laughter, growth, and an unwavering commitment to building a beautiful life together. We cannot wait to celebrate this milestone with everyone we hold dear.</p>
 </div>
 </section>
 
-<section class='scratch-sec' id='invitation'><div class='container reveal'><h2 class='title'>Your Invitation</h2><p class='sub'>Scratch Here to Reveal Your Invitation ✨</p>
-<div class='board' id='board'><div class='face' id='face'><div class='msg'><p class='m' data-f='invitation.message'>With immense joy and the blessings of our families, you are warmly invited to celebrate this special occasion with us.</p><p class='sig' data-f='invitation.signature'>You Are Invited by the Family</p></div><canvas id='scr' aria-label='Scratch surface: drag to reveal the invitation'></canvas></div></div>
-<button class='linkbtn' id='revealBtn'>Reveal invitation</button></div></section>
-<section id='family' hidden><div class='container'><h2 class='title reveal'>With the Blessings Of</h2><p class='sub reveal'>Our beloved families</p><div class='fam' id='famList'></div></div></section>
 <section class="cd-sec" id="countdown">
-<div class="container reveal">
-<h2 class="title">Counting Down To Forever</h2>
-<p class="sub">Our special day is almost here!</p>
+<div class="container">
+<h2 class="title">Countdown</h2>
+<p class="sub">Until the big day</p>
 <div class="countdown">
-<div class="tb"><span id="days">0</span><small>Days</small></div>
-<div class="tb"><span id="hours">0</span><small>Hours</small></div>
-<div class="tb"><span id="minutes">0</span><small>Minutes</small></div>
-<div class="tb"><span id="seconds">0</span><small>Seconds</small></div>
+<div class="tb reveal"><span id="days">0</span><small>Days</small></div>
+<div class="tb reveal"><span id="hours">0</span><small>Hours</small></div>
+<div class="tb reveal"><span id="minutes">0</span><small>Minutes</small></div>
+<div class="tb reveal"><span id="seconds">0</span><small>Seconds</small></div>
 </div>
 </div>
 </section>
 
 <section id="events">
 <div class="container">
-<div class="reveal"><h2 class="title">Wedding Events</h2><p class="sub">Join us as we celebrate our love.</p></div>
+<h2 class="title">Events</h2>
+<p class="sub">Let's celebrate together</p>
 <div class="events">
-<div class="card reveal"><div class="ic">💍</div><h3>Wedding Ceremony</h3><p><strong>November 21, 2026</strong></p><p class='tm'>6:00 PM</p><p data-f='venue'>Kohitoor Marquee, Opposite Paradise Marquee, Main Daewoo Road, Faisalabad</p></div>
-<div class="card reveal"><div class="ic">🥂</div><h3>Reception</h3><p><strong>November 21, 2026</strong></p><p class='tm'>8:00 PM</p><p data-f='venue'>Kohitoor Marquee, Opposite Paradise Marquee, Main Daewoo Road, Faisalabad</p><p class="n">Dinner, Making Memories &amp; celebration</p></div>
+<div class="card reveal">
+<div class="ic">💒</div>
+<h3>Ceremony</h3>
+<p class="tm">December 22 · 6:00 PM</p>
+<p class="n">Grand Venue</p>
+</div>
+<div class="card reveal">
+<div class="ic">🎉</div>
+<h3>Reception</h3>
+<p class="tm">December 22 · 8:30 PM</p>
+<p class="n">Same Venue</p>
+</div>
 </div>
 </div>
 </section>
 
 <section class="gal-sec" id="gallery">
 <div class="container">
-<h2 class="title reveal">Moments We'll Make</h2>
-<p class="sub reveal">Memories waiting to be made.</p>
+<h2 class="title">Gallery</h2>
+<p class="sub">Moments we treasure</p>
 <div class="gallery">
-<figure class="reveal">💍<figcaption>Rings</figcaption></figure>
-<figure class="reveal">💐<figcaption>Flowers</figcaption></figure>
-<figure class="reveal">🥂<figcaption>Cheers</figcaption></figure>
-<figure class="reveal">💌<figcaption>Love</figcaption></figure>
-<figure class="reveal">✨<figcaption>Joy</figcaption></figure>
-<figure class="reveal">🕊️<figcaption>Forever</figcaption></figure>
+<figure class="reveal"><img src="" alt=""><figcaption>First Meet</figcaption></figure>
+<figure class="reveal"><img src="" alt=""><figcaption>Engagement</figcaption></figure>
+<figure class="reveal"><img src="" alt=""><figcaption>Walima</figcaption></figure>
+<figure class="reveal"><img src="" alt=""><figcaption>Mehendi</figcaption></figure>
+<figure class="reveal"><img src="" alt=""><figcaption>Baraat</figcaption></figure>
+<figure class="reveal"><img src="" alt=""><figcaption>Forever</figcaption></figure>
 </div>
 </div>
 </section>
 
 <footer>
-<h2 data-f='coupleNames'>Hamna &amp; Shehriyar</h2>
-<div class="divider">❦</div>
-<p>Thank you for being part of our special day.</p>
-<p>With love, always ❤️</p>
+<h2>Hamna & Shehriyar</h2>
+<p>Together forever<br>December 22, 2024</p>
 </footer>
-<div class="cur-ring"></div><div class="cur-dot"></div>
 
 <script>
-const WEDDING={coupleNames:'Hamna & Shehriyar',dateText:'November 21, 2026',dateTime:'2026-11-21T18:00:00',venue:'Kohitoor Marquee, Opposite Paradise Marquee, Main Daewoo Road, Faisalabad',entrance:{welcome:'You Are Cordially Invited',prompt:'Tap to Open the Doors'},invitation:{message:'With immense joy and the blessings of our families, you are warmly invited to celebrate this special occasion with us.',signature:'You Are Invited by the Family'},families:{bride:{title:`The Bride's Family`,names:[]},groom:{title:`The Groom's Family`,names:[]}},music:{src:''}};
-const wedding=new Date(WEDDING.dateTime).getTime();
-const get=p=>p.split('.').reduce((o,k)=>o&&o[k],WEDDING);
-document.querySelectorAll('[data-f]').forEach(e=>{const v=get(e.dataset.f);if(typeof v==='string'&&v.trim())e.textContent=v});
-document.title=WEDDING.coupleNames+' – Our Wedding 💍';
-const $=id=>document.getElementById(id);
-function tick(){
-const d=Math.max(0,wedding-Date.now());
-$("days").textContent=Math.floor(d/864e5);
-$("hours").textContent=Math.floor(d/36e5%24);
-$("minutes").textContent=Math.floor(d/6e4%60);
-$("seconds").textContent=Math.floor(d/1e3%60);
+const audio = document.getElementById('bgMusic');
+const muteBtn = document.getElementById('mute');
+let isMuted = false;
+
+// Handle music autoplay with user interaction
+document.addEventListener('click', () => {
+  if(audio.paused) audio.play().catch(() => {});
+}, {once: true});
+
+muteBtn.addEventListener('click', (e) => {
+  e.stopPropagation();
+  isMuted = !isMuted;
+  audio.volume = isMuted ? 0 : 0.4;
+  muteBtn.textContent = isMuted ? '🔇' : '🔊';
+});
+
+// Gate/Doors animation
+const gate = document.getElementById('gate');
+const openBtn = document.getElementById('openBtn');
+const skipBtn = document.getElementById('skipBtn');
+
+openBtn.addEventListener('click', () => openGate());
+skipBtn.addEventListener('click', () => openGate(true));
+gate.addEventListener('click', (e) => {
+  if(e.target === gate) openGate();
+});
+
+function openGate(fast = false) {
+  gate.classList.toggle('fast', fast);
+  gate.classList.add('open');
+  setTimeout(() => {
+    gate.classList.add('done');
+    document.body.classList.remove('locked');
+    if(audio.paused) audio.play().catch(() => {});
+  }, fast ? 500 : 1400);
 }
-tick();setInterval(tick,1000);
-const io=new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting){e.target.classList.add("on");io.unobserve(e.target)}}),{threshold:.15});
-document.querySelectorAll(".reveal").forEach(el=>io.observe(el));
-{const fams=Object.values(WEDDING.families).filter(f=>f.names&&f.names.length);
-if(fams.length){fams.forEach(f=>{const c=document.createElement('div'),h=document.createElement('h3'),u=document.createElement('ul');c.className='fam-card reveal';h.textContent=f.title;f.names.forEach(n=>{const li=document.createElement('li');li.textContent=n;u.appendChild(li)});c.append(h,u);$('famList').appendChild(c);io.observe(c)});$('family').hidden=false}}
-const gate=$('gate'),mute=$('mute'),seq=[392,494,587,659,587,494,440,523,659,784,659,523];
-let ac,timer,aud,step=0,sound=false,opened=false;
-function note(f,v){const t=ac.currentTime,o=ac.createOscillator(),g=ac.createGain();o.frequency.value=f;g.gain.setValueAtTime(0,t);g.gain.linearRampToValueAtTime(v,t+.06);g.gain.exponentialRampToValueAtTime(.001,t+2.4);o.connect(g).connect(ac.destination);o.start(t);o.stop(t+2.5)}
-function setSound(on){sound=on;mute.textContent=on?'🔊':'🔇';mute.setAttribute('aria-label',on?'Mute music':'Play music');clearInterval(timer);if(aud)aud.pause();if(!on)return;
-if(WEDDING.music.src){aud=aud||Object.assign(new Audio(WEDDING.music.src),{loop:true,volume:.4});aud.play().catch(()=>{});return}
-try{ac=ac||new(window.AudioContext||window.webkitAudioContext)();ac.resume();timer=setInterval(()=>{const f=seq[step++%seq.length];note(f,.05);if(step%4===1)note(f/2,.04)},650)}catch(e){}}
-mute.onclick=()=>setSound(!sound);
-function finish(ms){setTimeout(()=>{gate.remove();document.body.classList.remove('locked');scrollTo(0,0)},ms)}
-function enter(skip){if(opened)return;opened=true;if(skip){gate.classList.add('open','fast','done');finish(600)}else{setSound(true);gate.classList.add('open');setTimeout(()=>gate.classList.add('done'),3900);finish(5500)}}
-gate.addEventListener('click',e=>{if(!e.target.closest('#skipBtn'))enter(false)});
-$('skipBtn').addEventListener('click',e=>{e.stopPropagation();enter(true)});
-$('openBtn').focus({preventScroll:true});
-{const face=$('face'),cv=$('scr'),ctx=cv.getContext('2d'),pr=document.createElement('canvas');pr.width=40;pr.height=24;const pc=pr.getContext('2d');
-let done=false,started=false,drawing=false,lx=0,ly=0,last=0;
-function paint(){const r=face.getBoundingClientRect(),d=Math.min(devicePixelRatio||1,2);if(!r.width)return;cv.width=r.width*d;cv.height=r.height*d;ctx.setTransform(d,0,0,d,0,0);ctx.globalCompositeOperation='source-over';
-const g=ctx.createLinearGradient(0,0,r.width,r.height);['#8c6a24','#e3c98a','#b8913f','#f6e7b4','#a37c2c','#e3c98a','#8c6a24'].forEach((c,i,a)=>g.addColorStop(i/(a.length-1),c));ctx.fillStyle=g;ctx.fillRect(0,0,r.width,r.height);
-ctx.globalAlpha=.18;ctx.strokeStyle='#fff';for(let x=-r.height;x<r.width;x+=9){ctx.beginPath();ctx.moveTo(x,0);ctx.lineTo(x+r.height,r.height);ctx.stroke()}ctx.globalAlpha=1;
-ctx.fillStyle='rgba(74,59,42,.88)';ctx.textAlign='center';ctx.textBaseline='middle';ctx.font=`${Math.min(46,r.width/8)}px 'Great Vibes',cursive`;ctx.fillText('Scratch Here',r.width/2,r.height/2-16);ctx.font=`${Math.min(22,r.width/17)}px 'Cormorant Garamond',serif`;ctx.fillText('to reveal your invitation ✨',r.width/2,r.height/2+24)}
-const pos=e=>{const r=cv.getBoundingClientRect();return[e.clientX-r.left,e.clientY-r.top]};
-function scratch(x,y){ctx.globalCompositeOperation='destination-out';ctx.lineCap=ctx.lineJoin='round';ctx.lineWidth=Math.max(38,cv.clientWidth/9);ctx.beginPath();ctx.moveTo(lx,ly);ctx.lineTo(x+.01,y);ctx.stroke();lx=x;ly=y}
-function check(){pc.clearRect(0,0,40,24);pc.drawImage(cv,0,0,40,24);const d=pc.getImageData(0,0,40,24).data;let s=0;for(let i=3;i<d.length;i+=4)s+=d[i];if(1-s/(d.length/4*255)>=.55)reveal()}
-function burst(){const r=face.getBoundingClientRect(),sy=['✦','✧','❀'],co=['#b8913f','#d9bd7c','#e7a99b','#f1dfab'];for(let i=0;i<36;i++){const s=document.createElement('span'),a=Math.random()*6.28,d=60+Math.random()*120;s.className='sp';s.textContent=sy[i%3];s.style.cssText=`left:${r.left+Math.random()*r.width}px;top:${r.top+Math.random()*r.height}px;font-size:${12+Math.random()*14}px;color:${co[i%4]};--dx:${Math.cos(a)*d}px;--dy:${Math.sin(a)*d}px;--r:${Math.random()*360-180}deg`;document.body.appendChild(s);s.addEventListener('animationend',()=>s.remove())}}
-function reveal(){if(done)return;done=true;drawing=false;cv.classList.add('gone');$('board').classList.add('revealed');$('revealBtn').hidden=true;burst()}
-cv.addEventListener('pointerdown',e=>{if(done)return;drawing=started=true;cv.setPointerCapture(e.pointerId);[lx,ly]=pos(e);scratch(lx,ly);e.preventDefault()});
-cv.addEventListener('pointermove',e=>{if(!drawing||done)return;const[x,y]=pos(e);scratch(x,y);const n=performance.now();if(n-last>150){last=n;check()}});
-['pointerup','pointercancel'].forEach(t=>cv.addEventListener(t,()=>{if(drawing){drawing=false;check()}}));
-$('revealBtn').addEventListener('click',reveal);
-new ResizeObserver(()=>{if(!started&&!done)paint()}).observe(face);
-(document.fonts?document.fonts.ready:Promise.resolve()).then(()=>{if(!started&&!done)paint()})}
-if(!matchMedia("(prefers-reduced-motion: reduce)").matches){
-const dot=document.querySelector(".cur-dot"),ring=document.querySelector(".cur-ring"),S=["✦","✧","❤","❀"],C=["#b8913f","#d9bd7c","#e7a99b","#f1dfab"];
-let mx=-100,my=-100,rx=-100,ry=-100,last=0;
-function spark(x,y,spread){const s=document.createElement("span"),a=Math.random()*6.28,d=spread*(.4+Math.random()*.6);
-s.className="sp";s.textContent=S[Math.random()*S.length|0];s.style.cssText=`left:${x}px;top:${y}px;font-size:${10+Math.random()*12}px;color:${C[Math.random()*C.length|0]};--dx:${Math.cos(a)*d}px;--dy:${Math.sin(a)*d+20}px;--r:${Math.random()*360-180}deg`;
-document.body.appendChild(s);s.addEventListener("animationend",()=>s.remove())}
-addEventListener("mousemove",e=>{mx=e.clientX;my=e.clientY;dot.style.opacity=ring.style.opacity=1;dot.style.transform=`translate(${mx}px,${my}px)`;const n=performance.now();if(n-last>45){spark(mx,my,30);last=n}});
-document.addEventListener("mouseleave",()=>dot.style.opacity=ring.style.opacity=0);
-document.querySelectorAll("a,.card,.tb,.gallery figure").forEach(el=>{el.addEventListener("mouseenter",()=>ring.classList.add("h"));el.addEventListener("mouseleave",()=>ring.classList.remove("h"))});
-(function f(){rx+=(mx-rx)*.18;ry+=(my-ry)*.18;ring.style.transform=`translate(${rx}px,${ry}px)`;requestAnimationFrame(f)})();
-addEventListener("touchstart",e=>{for(const t of e.changedTouches)for(let i=0;i<10;i++)spark(t.clientX,t.clientY,60)},{passive:true});
-let lt=0;addEventListener("touchmove",e=>{const n=performance.now();if(n-lt<40)return;lt=n;for(const t of e.touches)spark(t.clientX,t.clientY,30)},{passive:true});
+
+// Countdown
+function countdown() {
+  const wedding = new Date('December 22, 2024 6:00:00').getTime();
+  const now = new Date().getTime();
+  const diff = wedding - now;
+
+  document.getElementById('days').textContent = Math.floor(diff / (1000*60*60*24));
+  document.getElementById('hours').textContent = Math.floor((diff % (1000*60*60*24)) / (1000*60*60));
+  document.getElementById('minutes').textContent = Math.floor((diff % (1000*60*60)) / (1000*60));
+  document.getElementById('seconds').textContent = Math.floor((diff % (1000*60)) / 1000);
+
+  if(diff < 0) {
+    document.querySelector('.cd-sec').innerHTML = '<h2 class="title">The Big Day!</h2><p class="sub">We are officially married!</p>';
+  }
 }
+
+countdown();
+setInterval(countdown, 1000);
+
+// Reveal animation
+const reveals = document.querySelectorAll('.reveal');
+const observer = new IntersectionObserver((entries) => {
+  entries.forEach(entry => {
+    if(entry.isIntersecting) {
+      entry.target.classList.add('on');
+      observer.unobserve(entry.target);
+    }
+  });
+}, {threshold: 0.1});
+
+reveals.forEach(el => observer.observe(el));
 </script>
 </body>
 </html>
